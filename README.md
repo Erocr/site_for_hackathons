@@ -60,6 +60,8 @@ https://independant.io/hebergeur-web-gratuit/
 
 ## II) Architecture
 
+Idees generales: https://chatgpt.com/share/68ff3854-e6a8-8006-8d15-53ae639aaa82
+
 ### 2.1- Base de donnée
 
 On doit pouvoir stocker les scores et les codes des personnes. Donc, SQL est le meilleur choix !
