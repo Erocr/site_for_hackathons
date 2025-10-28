@@ -9,10 +9,10 @@
 
 ### 1.1- Types de hackathons
 
-Voici une liste de types d'hackathons possibles:
+Voici une liste de types d'hackathons possibles :
 
-- Liste d'exercices où il faut envoyer le résultat (exemple: adventofcode.com)
-- Liste d'exercices mais avec une interface graphique (exemple: codingame.com)
+- Liste d'exercices où il faut envoyer le résultat (exemple : adventofcode.com)
+- Liste d'exercices, mais avec une interface graphique (exemple : codingame.com)
 - Tournois, avec un système d'élo (exemple: codingame.com)
 
 ### 1.2- Exécuter du code sur le serveur ou chez le client ?
@@ -45,22 +45,61 @@ Le but principal du projet est de pouvoir fournir un site qui puisse rester dans
 - SQL
 - Très peu d'html/CSS
 
-Pour la base de donnée on va donc utiliser **SQL**. Pour l'API, **python** semble le meilleur choix. Enfin, pour le site, on va choisir **html/CSS/javascript**.
+Pour la base de donnée, on va donc utiliser **SQL**. Pour l'API, **python** semble le meilleur choix. Enfin, pour le site, on va choisir **html/CSS/javascript**.
 
 ### 1.5- Héberger le serveur chez nous vs chez quelqu'un d'autre
 
 Héberger chez nous permettrait d'avoir un contrôle complet. Malheureusement, il y a aussi beaucoup d'inconvénients. On doit gérer beaucoup plus de choses (antivirus, firewall, DNS, adresse IP, etc). On peut facilement avoir des gros problèmes de sécurité. De plus, on risque d'avoir aussi des problèmes de performances.
-On va donc **hoster chez quelqu'un d'autre**.
+On va donc **héberger chez quelqu'un d'autre**.
 
-N.B. Il se pourrait que pour exécuter le codes des clients sur le serveur, hoster chez nous soit une nécessité.
+N.B. Il se pourrait que pour exécuter le code des clients sur le serveur, hoster chez nous soit une nécessité.
 
-Une liste d'hébergeurs avec des offres gratuites: 
-warketingdigital.net/hebergeurs-web-gratuits-a-vie/
-https://independant.io/hebergeur-web-gratuit/
+### 1.6- bibliothèques utilisées
+
+Pour la base de donnée, on a le choix entre :
+- SQLite (local)  (+simple)
+- PostgreSQL (dans le cloud ou local)
+
+Afin de connecter la base de donnée au code, on peut utiliser la bibliothèque python **sqlalchemy**
+
+Enfin, pour créer l'API, on utilisera **fastapi**
+On utilisera aussi **pydantic** pour un code plus joli. 
+
+### 1.7- Où héberger
+
+On doit héberger la base de donnée, l'API, et enfin le site en lui-même
+
+#### 1.7.1 Héberger la base de donnée
+
+Si on utilise postgreSQL, on pourra alors l'héberger, permettant d'y accéder depuis n'importe quel ordinateur.
+
+Voici quelques hébergements possibles :
+- Supabase → PostgreSQL + interface admin + API SQL + backups auto
+- Neon.tech → PostgreSQL serverless et super rapide
+- Railway.app → héberge API + DB facilement
+- Render.com → offre gratuite aussi
+
+#### 1.7.2 Héberger l'API
+
+L'API doit être accessible par le site, donc par n'importe quel ordinateur.
+
+Voici une liste d'hébergeurs pour fastapi :
+- Render
+- Railway
+
+On doit faire attention : pour que le déploiement se fasse automatiquement, il faut que le code corresponde au template 
+https://github.com/render-examples/fastapi
+
+#### 1.7.3 Héberger le site
+
+Voici quelques options :
+- Vercel
+- Netlify
+- Render (static site)
 
 ## II) Architecture
 
-Idees generales: https://chatgpt.com/share/68ff3854-e6a8-8006-8d15-53ae639aaa82
+Idees générales : https://chatgpt.com/share/68ff3854-e6a8-8006-8d15-53ae639aaa82
 
 ### 2.1- Base de donnée
 
@@ -104,3 +143,15 @@ classDiagram
 ### 2.2- API
 
 On souhaite à présent une API qui puisse gérer la base de donnée et être appelée par le site.
+
+Voici une liste des fonctionnalités :
+
+- submit
+- get_submission
+- add_exo
+- get_exo
+- add_hackathon
+- get_hackathon
+- add_person
+- get_person
+
