@@ -117,25 +117,26 @@ classDiagram
     }
     
     class Personne {
-				String nom
-				+int id
+        String nom
+        +int id
     }
     
     class Exercice {
-				String nom
-				+int id
+        String nom
+        +int id
     }
     
     class Hackathon {
-				+int id
-				DATETIME date_deb
-				DATETIME date_fin
+        +int id
+        DATETIME date_deb
+        DATETIME date_fin
     }
     
-    Soumission "1" -- "*" Personne
-		Exercice "*" -- "1" Soumission
-		Personne "*" -- "*" Hackathon
-		Hackathon "*" -- "1" Exercice
+    Soumission "1..*" -- "*" Personne
+    Exercice "*" -- "1" Soumission
+    Personne "*" -- "*" Hackathon
+    Hackathon "*" -- "1" Exercice
+     
 
 ```
 
