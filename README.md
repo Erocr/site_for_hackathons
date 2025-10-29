@@ -79,6 +79,11 @@ Voici quelques hébergements possibles :
 - Railway.app → héberge API + DB facilement
 - Render.com → offre gratuite aussi
 
+
+Dans ce test, on utilise **Neon.tech**  
+Le mot de passe n'est pas en clair sur le github. Il est dans un fichier appelé database_key.txt qui ne sera
+pas envoyé sur git. Pour y accéder, vous êtes priés de demander aux admins.
+
 #### 1.7.2 Héberger l'API
 
 L'API doit être accessible par le site, donc par n'importe quel ordinateur.
